@@ -5,7 +5,10 @@ FROM python:3.6.4
 # Ref: https://yarnpkg.com/en/docs/install
 
 RUN apt-get update
-RUN apt-get install -yqq apt-transport-https
+RUN apt-get install -yqq apt-transport-https jq
+RUN pip install awscli
+RUN curl -o /usr/local/bin/ecs https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
+RUN chmod +x /usr/local/bin/ecs
 
 RUN \
   echo "deb https://deb.nodesource.com/node_8.x jessie main" > /etc/apt/sources.list.d/nodesource.list && \
