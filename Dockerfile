@@ -17,4 +17,4 @@ RUN \
   apt-get install -yqq nodejs && \
   rm -rf /var/lib/apt/lists/*
 
-RUN npm install --global nodemon concurrently watch-pylint@
+RUN npm install --global nodemon concurrently watch-pylint@ serverless
